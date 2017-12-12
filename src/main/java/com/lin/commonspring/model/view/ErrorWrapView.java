@@ -1,17 +1,17 @@
-package com.lin.commonspring.exception;
+package com.lin.commonspring.model.view;
 
-public abstract class AbstractBaseException extends RuntimeException {
-
-    private static final long serialVersionUID = 23794273982374L;
+public class ErrorWrapView {
 
     private int code;
 
     private String msg;
 
-    public AbstractBaseException(int code, String msg) {
-        super(msg, null, false, false);
+    public ErrorWrapView(int code, String msg) {
         this.code = code;
         this.msg = msg;
+    }
+
+    public ErrorWrapView() {
     }
 
     public int getCode() {

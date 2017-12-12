@@ -3,56 +3,49 @@ spring:
     active: dev
   application:
     name: commonSpring
-#    jmx监控关闭
   jmx:
     enabled: false
   http:
     multipart:
-      max-file-size: 50Mb
-      max-request-size: 50Mb
+      maxFileSize: 50Mb
+      maxRequestSize: 50Mb
 server:
   port: 8080
-  devBaseUrl: http://commonSpring-dev.cn/
-  testBaseUrl: http://commonSpring-test.cn/
-  prodBaseUrl: http://commonSpring.cn/
+  devBaseUrl: http://common.spring-dev.cn/
+  testBaseUrl: http://common.spring-test.cn/
+  prodBaseUrl: http://common.spring.cn/
   tomcat:
     max-threads: 400
     uri-encoding: UTF-8
+
 mybatis:
   mapper-locations: classpath:*Mapper.xml
   configuration:
-    aggressive-lazy-loading: false
-    lazy-loading-enabled: true
-    lazy-load-trigger-methods: ""
-    map-underscore-to-camel-case: true
-jpush:
-  appKey:
-  masterSecret:
-alipay:
-  appId:
-  alipayPublicKey:
-  alipayPrivateKey:
-kafka:
-  binder:
-  group:
-  topic:
-    topic-1:
-    topic-2:
+    aggressiveLazyLoading: false
+    lazyLoadingEnabled: true
+    lazyLoadTriggerMethods: ""
+    mapUnderscoreToCamelCase: true
 
+
+#####################################
+##########    DEV环境    ############
+#####################################
 ---
 spring:
   profiles: dev
-  data:
-    elasticsearch:
-      cluster-name: XXX
-      cluster-nodes: localhost
+
 datasource:
-    jdbcUrl: jdbc-url:jdbc:mysql://localhost:3306/lin?useUnicode=true
-    username: root
-    password: root
-    maximumPoolSize: 10
+  jdbcUrl: jdbc:mysql://localhost:3306/focus_live?useUnicode=true
+  username: root
+  password: root
+  maximumPoolSize: 10
+
 redis:
   address: localhost
-  port: 7030
+  port: 7036
   auth:
+  persistDb: 1
+  cacheDb: 2
+  maxIdle: 5
+  maxTotal: 10
 
