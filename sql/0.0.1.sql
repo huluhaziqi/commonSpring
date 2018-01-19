@@ -1,5 +1,5 @@
-drop TABLE IF EXISTS focus_live.mini_video;
-CREATE TABLE focus_live.mini_video(
+drop TABLE IF EXISTS lin2.mini_video;
+CREATE TABLE lin2.mini_video(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '小视频id',
   `type` TINYINT DEFAULT 1 COMMENT '小视频类型，来自剪切，还是来自直接录制',
   `liveroom_id` BIGINT NULL COMMENT '来源直播间id',
@@ -14,8 +14,8 @@ CREATE TABLE focus_live.mini_video(
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-drop TABLE IF EXISTS focus_live.mini_video_record;
-CREATE TABLE focus_live.mini_video_record(
+drop TABLE IF EXISTS lin2.mini_video_record;
+CREATE TABLE lin2.mini_video_record(
   `mini_video_id` BIGINT NOT NULL COMMENT '小视频id',
   `file_id` VARCHAR(200) DEFAULT NULL COMMENT '小视频file_id',
   `url` VARCHAR(200) DEFAULT NULL COMMENT '小视频播放链接',
@@ -30,8 +30,8 @@ CREATE TABLE focus_live.mini_video_record(
   PRIMARY KEY (`mini_video_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-drop TABLE IF EXISTS focus_live.stat_mini_video;
-CREATE TABLE focus_live.stat_mini_video(
+drop TABLE IF EXISTS lin2.stat_mini_video;
+CREATE TABLE lin2.stat_mini_video(
   `mini_video_id` BIGINT NOT NULL COMMENT '小视频id',
   `total_vv` BIGINT DEFAULT 0 COMMENT '小视频总观看量',
   `app_vv` BIGINT DEFAULT 0 COMMENT '小视频app观看量',
@@ -42,8 +42,8 @@ CREATE TABLE focus_live.stat_mini_video(
   PRIMARY KEY (`mini_video_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS focus_live.mini_video_tag;
-CREATE TABLE focus_live.mini_video_tag(
+DROP TABLE IF EXISTS lin2.mini_video_tag;
+CREATE TABLE lin2.mini_video_tag(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'id',
   `mini_video_id` BIGINT NOT NULL COMMENT '小视频id',
   `tag_id` BIGINT NOT NULL COMMENT 'tag_id',
@@ -52,8 +52,8 @@ CREATE TABLE focus_live.mini_video_tag(
   UNIQUE INDEX id_index (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS focus_live.mini_video_building;
-CREATE TABLE focus_live.mini_video_building(
+DROP TABLE IF EXISTS lin2.mini_video_building;
+CREATE TABLE lin2.mini_video_building(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'id',
   `mini_video_id` BIGINT(20) NOT NULL COMMENT '小视频id',
   `building_id` VARCHAR(200) NOT NULL COMMENT '楼盘id',
@@ -64,8 +64,8 @@ CREATE TABLE focus_live.mini_video_building(
   KEY mini_video_building_index (`mini_video_id`,`building_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE = utf8_general_ci;
 
-DROP TABLE IF EXISTS focus_live.video_tag;
-CREATE TABLE focus_live.video_tag(
+DROP TABLE IF EXISTS lin2.video_tag;
+CREATE TABLE lin2.video_tag(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'id',
   `status` tinyint(4) NOT NULL,
   `type` tinyint(3) unsigned NOT NULL,
@@ -76,8 +76,8 @@ CREATE TABLE focus_live.video_tag(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE = utf8_general_ci;
 
 -- 精选视频审核队列
-DROP TABLE IF EXISTS focus_live.mini_video_review;
-CREATE TABLE `focus_live`.`mini_video_review`(
+DROP TABLE IF EXISTS lin2.mini_video_review;
+CREATE TABLE `lin2`.`mini_video_review`(
   `mini_video_id` BIGINT NOT NULL COMMENT '小视频id',
   `status` TINYINT NOT NULL COMMENT '状态',
   `reviewer_name` VARCHAR(50) COMMENT '操作人姓名',
@@ -88,8 +88,8 @@ CREATE TABLE `focus_live`.`mini_video_review`(
 ) ENGINE=INNODB CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- 精选视频审核日志记录
-DROP TABLE IF EXISTS focus_live.mini_video_review_log;
-CREATE TABLE `focus_live`.`mini_video_review_log`(
+DROP TABLE IF EXISTS lin2.mini_video_review_log;
+CREATE TABLE `lin2`.`mini_video_review_log`(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'id',
   `mini_video_id` BIGINT NOT NULL COMMENT '小视频id',
   `status` TINYINT NOT NULL COMMENT '状态',
@@ -99,8 +99,8 @@ CREATE TABLE `focus_live`.`mini_video_review_log`(
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB CHARSET=utf8 COLLATE=utf8_general_ci;
 
-drop TABLE IF EXISTS focus_live.mini_video_cut_record;
-CREATE TABLE focus_live.mini_video_cut_record(
+drop TABLE IF EXISTS lin2.mini_video_cut_record;
+CREATE TABLE lin2.mini_video_cut_record(
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'id',
   `liveroom_id` BIGINT(20) NOT NULL COMMENT '直播间 id ',
   `mini_video_id` BIGINT(20) DEFAULT NULL COMMENT '小视频id',

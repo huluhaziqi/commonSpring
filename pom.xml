@@ -26,17 +26,6 @@
 
     <repositories>
         <repository>
-            <id>nexus</id>
-            <url>http://nexus.inner.focus.cn/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
             <id>maven</id>
             <name>Maven Repository Switchboard</name>
             <layout>default</layout>
@@ -45,15 +34,15 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!--<repository>-->
-            <!--<id>central</id>-->
-            <!--<name>Central Repository</name>-->
-            <!--<url>http://maven.aliyun.com/nexus/content/repositories/central</url>-->
-            <!--<layout>default</layout>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>atlassian</id>
             <name>atlassian</name>

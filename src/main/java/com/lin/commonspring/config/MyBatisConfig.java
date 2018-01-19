@@ -1,24 +1,21 @@
 package com.lin.commonspring.config;
 
-import com.lin.commonspring.annotation.PrimaryRespority;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 import java.util.HashSet;
 
-@Configuration
-@MapperScan(basePackages = {"com.lin.commonspring.dao"}, annotationClass = PrimaryRespority.class,
-        sqlSessionTemplateRef = "sqlSessionTemplate")
+//@Configuration
+//@MapperScan(basePackages = {"com.lin.commonspring.dao"}, annotationClass = PrimaryRespority.class,
+//        sqlSessionTemplateRef = "sqlSessionTemplate")
 //选择自己想要的primaryRepository
 public class MyBatisConfig {
 

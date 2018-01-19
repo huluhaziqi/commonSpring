@@ -5,14 +5,14 @@
 <generatorConfiguration>
     <!--数据库驱动-->
     <classPathEntry
-            location="/Users/linxiaobin/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar"/>
+            location="/Users/linxiaobin/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar"/>
     <context id="MySqlTables" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/lin"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/lin2"
                         userId="root" password="root">
         </jdbcConnection>
         <javaTypeResolver>
@@ -36,6 +36,39 @@
         <table tableName="users" domainObjectName="UsersEntity" mapperName="UsersMapper"
                sqlProviderName="UsersSqlProvider">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <!--精选视频-->
+        <table tableName="mini_video" domainObjectName="MiniVideoEntity" mapperName="MiniVideoMapper"
+               sqlProviderName="MiniVideoSqlProvider">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="mini_video_record" domainObjectName="MiniVideoRecordEntity" mapperName="MiniVideoRecordMapper"
+               sqlProviderName="MiniVideoRecordSqlProvider">
+        </table>
+        <table tableName="stat_mini_video" domainObjectName="StatMiniVideoEntity" mapperName="StatMiniVideoMapper"
+               sqlProviderName="StatMiniVideoSqlProvider">
+        </table>
+        <table tableName="mini_video_tag" domainObjectName="MiniVideoTagEntity" mapperName="MiniVideoTagMapper"
+               sqlProviderName="MiniVideoTagSqlProvider">
+        </table>
+        <table tableName="mini_video_building" domainObjectName="MiniVideoBuildingEntity"
+               mapperName="MiniVideoBuildingMapper"
+               sqlProviderName="MiniVideoBuildingSqlProvider">
+        </table>
+        <table tableName="video_tag" domainObjectName="VideoTagEntity" mapperName="VideoTagMapper"
+               sqlProviderName="VideoTagSqlProvider">
+        </table>
+        <table tableName="mini_video_cut_record" domainObjectName="MiniVideoCutRecordEntity"
+               mapperName="MiniVideoCutRecordMapper"
+               sqlProviderName="MiniVideoCutRecordSqlProvider">
+        </table>
+        <table tableName="mini_video_review" domainObjectName="MiniVideoReviewEntity" mapperName="MiniVideoReviewMapper"
+               sqlProviderName="MiniVideoReviewSqlProvider">
+        </table>
+        <table tableName="mini_video_review_log" domainObjectName="MiniVideoReviewLogEntity"
+               mapperName="MiniVideoReviewLogMapper"
+               sqlProviderName="MiniVideoReviewLogSqlProvider">
         </table>
 
     </context>
