@@ -50,5 +50,5 @@ redis:
   maxTotal: 10
 
 qcloudcos:
-  bucketBaseUrl: https://t.focus-img.cn
+  bucketBaseUrl: *.*
 
