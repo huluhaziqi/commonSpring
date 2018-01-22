@@ -15,6 +15,23 @@ public class StatMiniVideoEntity {
 
     private Long likeCount;
 
+
+    public StatMiniVideoEntity() {
+    }
+
+    public StatMiniVideoEntity(long miniVideoId, boolean isInit) {
+        this.miniVideoId = miniVideoId;
+        if (isInit) {
+            this.totalVv = 0L;
+            this.appVv = 0L;
+            this.wapVv = 0L;
+            this.pcVv = 0L;
+            this.robotVv = 0L;
+            this.likeCount = 0L;
+        }
+
+    }
+
     public Long getMiniVideoId() {
         return miniVideoId;
     }

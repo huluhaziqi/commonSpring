@@ -113,3 +113,60 @@ CREATE TABLE lin2.mini_video_cut_record(
   PRIMARY KEY (`id`),
   KEY liveroom_vod_task_index (`liveroom_id`,`vod_task_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE = utf8_general_ci;
+
+drop TABLE  IF EXISTS `sequence`;
+create table `sequence` (
+  `table_name` varchar(20) not null comment '数据库表名',
+  `nex_id` bigint not null comment '下一个ID'
+) engine=innodb default charset=utf8 comment '全局唯一ID生成器';
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` bigint(20) unsigned NOT NULL,
+  `status` tinyint(3) unsigned NOT NULL,
+  `name` varchar(48) DEFAULT NULL,
+  `title` varchar(45) DEFAULT NULL,
+  `job` varchar(30) DEFAULT NULL,
+  `contact_mobile` varchar(20) DEFAULT NULL,
+  `contact_wechat` varchar(30) DEFAULT NULL,
+  `show_contact_mobile` tinyint(4) DEFAULT '0',
+  `show_contact_wechat` tinyint(4) DEFAULT '0',
+  `passed_host_application_id` bigint(20) DEFAULT NULL,
+  `pending_host_application_id` bigint(20) DEFAULT NULL,
+  `total_audience_count` bigint(20) DEFAULT '0',
+  `total_liveroom_count` bigint(20) DEFAULT '0',
+  `total_like_count` bigint(20) DEFAULT '0',
+  `total_building_count` bigint(20) DEFAULT '0',
+  `total_activity_subscribe_count` bigint(20) DEFAULT '0',
+  `total_live_duration` bigint(20) DEFAULT '0',
+  `application_update_time` timestamp NULL DEFAULT NULL,
+  `province_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+
+DROP TABLE IF EXISTS `playback_concat`;
+CREATE TABLE `playback_concat` (
+  `liveroom_id` bigint(11) NOT NULL COMMENT '直播间ID',
+  `file_id` varchar(32) NOT NULL COMMENT '该录制文件腾讯云唯一ID',
+  `url` varchar(128) NOT NULL COMMENT '拼接回放url',
+  `origin_url` varchar(128) DEFAULT NULL COMMENT '原始地址',
+  `mp4_10_url` varchar(128) DEFAULT NULL COMMENT 'mp4手机',
+  `mp4_20_url` varchar(128) DEFAULT NULL COMMENT 'mp4标清',
+  `mp4_30_url` varchar(128) DEFAULT NULL COMMENT 'mp4高清',
+  `mp4_40_url` varchar(128) DEFAULT NULL COMMENT 'mp4超清',
+  `hls_10_url` varchar(128) DEFAULT NULL COMMENT 'hls手机',
+  `hls_20_url` varchar(128) DEFAULT NULL COMMENT 'hls标清',
+  `hls_30_url` varchar(128) DEFAULT NULL COMMENT 'hls超清',
+  `hls_40_url` varchar(128) DEFAULT NULL COMMENT 'hls超高清',
+  `flv_10046_url` varchar(128) DEFAULT NULL COMMENT 'flv手机',
+  `flv_10047_url` varchar(128) DEFAULT NULL COMMENT 'flv标清',
+  `flv_10048_url` varchar(128) DEFAULT NULL COMMENT 'flv高清',
+  `flv_10049_url` varchar(128) DEFAULT NULL COMMENT 'flv超高清',
+  `duration` int(11) NOT NULL COMMENT '时长（秒）',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (`liveroom_id`),
+  UNIQUE KEY `idx_liveroom_id_file_id` (`liveroom_id`,`file_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='拼接的回放列表';

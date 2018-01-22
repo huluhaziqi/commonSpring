@@ -49,3 +49,6 @@ redis:
   maxIdle: 5
   maxTotal: 10
 
+qcloudcos:
+  bucketBaseUrl: https://t.focus-img.cn
+

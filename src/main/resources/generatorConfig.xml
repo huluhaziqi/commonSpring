@@ -38,38 +38,49 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
-        <!--精选视频-->
-        <table tableName="mini_video" domainObjectName="MiniVideoEntity" mapperName="MiniVideoMapper"
-               sqlProviderName="MiniVideoSqlProvider">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
-        <table tableName="mini_video_record" domainObjectName="MiniVideoRecordEntity" mapperName="MiniVideoRecordMapper"
-               sqlProviderName="MiniVideoRecordSqlProvider">
-        </table>
-        <table tableName="stat_mini_video" domainObjectName="StatMiniVideoEntity" mapperName="StatMiniVideoMapper"
-               sqlProviderName="StatMiniVideoSqlProvider">
-        </table>
-        <table tableName="mini_video_tag" domainObjectName="MiniVideoTagEntity" mapperName="MiniVideoTagMapper"
-               sqlProviderName="MiniVideoTagSqlProvider">
-        </table>
-        <table tableName="mini_video_building" domainObjectName="MiniVideoBuildingEntity"
-               mapperName="MiniVideoBuildingMapper"
-               sqlProviderName="MiniVideoBuildingSqlProvider">
-        </table>
-        <table tableName="video_tag" domainObjectName="VideoTagEntity" mapperName="VideoTagMapper"
-               sqlProviderName="VideoTagSqlProvider">
-        </table>
-        <table tableName="mini_video_cut_record" domainObjectName="MiniVideoCutRecordEntity"
-               mapperName="MiniVideoCutRecordMapper"
-               sqlProviderName="MiniVideoCutRecordSqlProvider">
-        </table>
-        <table tableName="mini_video_review" domainObjectName="MiniVideoReviewEntity" mapperName="MiniVideoReviewMapper"
-               sqlProviderName="MiniVideoReviewSqlProvider">
-        </table>
-        <table tableName="mini_video_review_log" domainObjectName="MiniVideoReviewLogEntity"
-               mapperName="MiniVideoReviewLogMapper"
-               sqlProviderName="MiniVideoReviewLogSqlProvider">
-        </table>
+        <!--&lt;!&ndash;精选视频&ndash;&gt;-->
+        <!--<table tableName="mini_video" domainObjectName="MiniVideoEntity" mapperName="MiniVideoMapper"-->
+               <!--sqlProviderName="MiniVideoSqlProvider">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_record" domainObjectName="MiniVideoRecordEntity" mapperName="MiniVideoRecordMapper"-->
+               <!--sqlProviderName="MiniVideoRecordSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="stat_mini_video" domainObjectName="StatMiniVideoEntity" mapperName="StatMiniVideoMapper"-->
+               <!--sqlProviderName="StatMiniVideoSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_tag" domainObjectName="MiniVideoTagEntity" mapperName="MiniVideoTagMapper"-->
+               <!--sqlProviderName="MiniVideoTagSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_building" domainObjectName="MiniVideoBuildingEntity"-->
+               <!--mapperName="MiniVideoBuildingMapper"-->
+               <!--sqlProviderName="MiniVideoBuildingSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="video_tag" domainObjectName="VideoTagEntity" mapperName="VideoTagMapper"-->
+               <!--sqlProviderName="VideoTagSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_cut_record" domainObjectName="MiniVideoCutRecordEntity"-->
+               <!--mapperName="MiniVideoCutRecordMapper"-->
+               <!--sqlProviderName="MiniVideoCutRecordSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_review" domainObjectName="MiniVideoReviewEntity" mapperName="MiniVideoReviewMapper"-->
+               <!--sqlProviderName="MiniVideoReviewSqlProvider">-->
+        <!--</table>-->
+        <!--<table tableName="mini_video_review_log" domainObjectName="MiniVideoReviewLogEntity"-->
+               <!--mapperName="MiniVideoReviewLogMapper"-->
+               <!--sqlProviderName="MiniVideoReviewLogSqlProvider">-->
+        <!--</table>-->
 
+        <!--<table tableName="sequence" domainObjectName="SequenceEntity" mapperName="SequenceMapper"-->
+               <!--sqlProviderName="SequenceSqlProvider">-->
+        <!--</table>-->
+
+        <!--<table tableName="user" domainObjectName="UserEntity" mapperName="UserMapper"-->
+               <!--sqlProviderName="UserSqlProvider">-->
+        <!--</table>-->
+
+        <table tableName="playback_concat" domainObjectName="PlaybackConcatEntity" mapperName="PlaybackConcatMapper"
+               sqlProviderName="PlaybackConcatSqlProvider">
+        </table>
     </context>
 </generatorConfiguration>

@@ -14,6 +14,12 @@ public abstract class AbstractBaseException extends RuntimeException {
         this.msg = msg;
     }
 
+    protected AbstractBaseException(int code, String message, String logMessage) {
+        super(logMessage, null, false, false);
+        this.code = code;
+        this.msg = message;
+    }
+
     public int getCode() {
         return code;
     }
